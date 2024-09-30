@@ -4,4 +4,9 @@ controllerName="santos.sapui5ts.controller.App"
 	xmlns="sap.m"
 >
     <Button id="idBtnHello" text="Say Hello" press="onSayHello"/>
+	<Input id="idInputHello" 
+		value="{/client/name}"
+		description="Hello {/client/name}"
+		width="30%"
+		valueLiveUpdate="true"/>
 </mvc:View>
