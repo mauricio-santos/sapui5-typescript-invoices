@@ -2,58 +2,28 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Start sapui5ts",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "npx",
+      "name": "sapui5ts-index.html",
       "cwd": "${workspaceFolder}",
-      "windows": {
-        "runtimeExecutable": "npx.cmd"
-      },
       "runtimeArgs": [
         "fiori",
         "run"
       ],
-      "args": [
-        "--open",
-        "test/flpSandbox.html#santossapui5ts-display"
-      ],
-      "console": "internalConsole",
-      "internalConsoleOptions": "openOnSessionStart",
-      "outputCapture": "std",
-      "port": 9229,
-      "env": {
-        "DEBUG": "--inspect",
-        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/sapui5ts\"}"
-      }
-    },
-    {
-      "name": "Start sapui5ts Local",
       "type": "node",
       "request": "launch",
-      "cwd": "${workspaceFolder}",
       "runtimeExecutable": "npx",
+      "args": [
+        "--open",
+        "index.html"
+      ],
       "windows": {
         "runtimeExecutable": "npx.cmd"
       },
-      "runtimeArgs": [
-        "fiori",
-        "run"
-      ],
-      "args": [
-        "--config",
-        "./ui5-local.yaml",
-        "--open",
-        "test/flpSandbox.html#santossapui5ts-display"
-      ],
       "console": "internalConsole",
       "internalConsoleOptions": "openOnSessionStart",
       "outputCapture": "std",
-      "port": 9229,
       "env": {
-        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/sapui5ts\"}"
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/sapui5ts\"}",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
       }
     }
   ]
