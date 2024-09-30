@@ -1,6 +1,7 @@
 <mvc:View
+controllerName="santos.sapui5ts.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 >
-    <Text id="idText" text="Hello World from App.view.xml"/>
+    <Button id="idBtnHello" text="Say Hello" press="onSayHello"/>
 </mvc:View>
