@@ -1,0 +1,6 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+>
+    <Text id="idText" text="Hello World from App.view.xml"/>
+</mvc:View>
