@@ -3,10 +3,10 @@ controllerName="santos.sapui5ts.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 >
-    <Button id="idBtnHello" text="Say Hello" press="onSayHello"/>
+    <Button id="idBtnHello" text="{i18n>btnSayHello}" press="onSayHello"/>
 	<Input id="idInputHello" 
 		value="{/client/name}"
-		description="Hello {/client/name}"
+		description="{i18n>hello} {/client/name}"
 		width="30%"
 		valueLiveUpdate="true"/>
 </mvc:View>
