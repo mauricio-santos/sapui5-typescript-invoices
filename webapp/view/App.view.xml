@@ -2,11 +2,27 @@
 controllerName="santos.sapui5ts.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
+	displayBlock="true"
 >
-    <Button id="idBtnHello" text="{i18n>btnSayHello}" press="onSayHello"/>
-	<Input id="idInputHello" 
-		value="{/client/name}"
-		description="{i18n>hello} {/client/name}"
-		width="30%"
-		valueLiveUpdate="true"/>
+<Shell id="idShell">
+	<App id="idApp">
+		<pages>
+			<Page id="id1Page" title="{i18n>homePageTitle}">
+				<content>
+					<Panel id="id1Panel" headerText="{i18n>helloPanel}">
+						<content>
+							<Button id="idSayHelloButton" text="{i18n>btnSayHello}" press="onSayHelloButtonPress"/>
+							<Input id="idNameInput"
+								value="{/client/name}"
+								description="{i18n>hello} {/client/name}"
+								width="30%"
+								valueLiveUpdate="true"
+							/>
+						</content>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</Shell>
 </mvc:View>

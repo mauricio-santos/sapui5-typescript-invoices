@@ -13,7 +13,7 @@ export default class App extends Controller {
 
     }
 
-    public onSayHello(): void {
+    public onSayHelloButtonPress(): void {
         const oBudle = (<ResourceBundle>(<ResourceModel>this.getView()?.getModel("i18n"))?.getResourceBundle());
         const oClientModel = (<JSONModel>this.getView()?.getModel())?.getProperty("/client/name")        
         const msg = oBudle.getText("msgHelloClient", [oClientModel]) || 'no text defined';
