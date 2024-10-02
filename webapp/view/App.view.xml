@@ -17,7 +17,7 @@ controllerName="santos.sapui5ts.controller.App"
 								width="60%"
 								valueLiveUpdate="true"
 							/>
-							<Text id="idText" class="sapUiSmallMargin" text="{i18n>hello} {/client/name}"/>
+							<Text id="idText" class="sapUiSmallMargin boldElement" text="{i18n>hello} {/client/name}"/>
 						</content>
 					</Panel>
 				</content>
