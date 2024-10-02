@@ -14,13 +14,19 @@
         data-sap-ui-resourceroots='{
             "santos.sapui5ts": "./"
         }'
-        data-sap-ui-onInit="module:santos/sapui5ts/index"
+        data-sap-ui-onInit="module:sap/ui/core/ComponentSupport"
         data-sap-ui-compatVersion="edge"
         data-sap-ui-async="true"
         data-sap-ui-frameOptions="trusted"
     ></script>
 
     <body class="sapUiBody" id="content">
+        <div 
+            data-sap-ui-component
+            data-name="santos.sapui5ts"
+            data-id="container"
+            data-settings='{"id": "sapui5ts"}'
+        ></div>
     </body>
 
 
