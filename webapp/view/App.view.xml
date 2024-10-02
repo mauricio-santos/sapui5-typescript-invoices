@@ -9,15 +9,15 @@ controllerName="santos.sapui5ts.controller.App"
 		<pages>
 			<Page id="id1Page" title="{i18n>homePageTitle}">
 				<content>
-					<Panel id="id1Panel" headerText="{i18n>helloPanel}">
+					<Panel id="id1Panel" class="sapUiResponsiveMargin" headerText="{i18n>helloPanel}" width="auto">
 						<content>
-							<Button id="idSayHelloButton" text="{i18n>btnSayHello}" press="onSayHelloButtonPress"/>
+							<Button id="idSayHelloButton" class="sapUiSmallMarginEnd" text="{i18n>btnSayHello}" press="onSayHelloButtonPress"/>
 							<Input id="idNameInput"
 								value="{/client/name}"
-								description="{i18n>hello} {/client/name}"
-								width="30%"
+								width="60%"
 								valueLiveUpdate="true"
 							/>
+							<Text id="idText" class="sapUiSmallMargin" text="{i18n>hello} {/client/name}"/>
 						</content>
 					</Panel>
 				</content>
