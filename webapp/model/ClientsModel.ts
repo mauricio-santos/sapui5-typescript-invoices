@@ -7,7 +7,7 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 export default class ClientsModel extends ManagedObject {
 
     create (): JSONModel {
-        let oClient: object = {
+        let oClient = {
             client: {
                 name: "Santos",
                 age: 32,
