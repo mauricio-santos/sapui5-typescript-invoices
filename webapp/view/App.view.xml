@@ -2,6 +2,7 @@
 controllerName="santos.sapui5ts.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
 	displayBlock="true"
 >
 <Shell id="idShell">
@@ -10,6 +11,7 @@ controllerName="santos.sapui5ts.controller.App"
 			<Page id="id1Page" title="{i18n>homePageTitle}">
 				<content>
 					<mvc:XMLView id="idXMLView" viewName="santos.sapui5ts.view.HelloPanel"/>
+					<core:Fragment fragmentName="santos.sapui5ts.fragments.SimpleForm" type="XML"/>
 				</content>
 			</Page>
 		</pages>
