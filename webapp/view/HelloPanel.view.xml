@@ -1,0 +1,18 @@
+<mvc:View
+	controllerName="santos.sapui5ts.controller.HelloPanel"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+>
+    <Panel id="id1Panel" class="sapUiResponsiveMargin" headerText="{i18n>helloPanel}" width="auto">
+        <content>
+            <Button id="idSayHelloButton" class="sapUiSmallMarginEnd" text="{i18n>btnSayHello}" press="onSayHelloButtonPress"/>
+            <Input id="idNameInput"
+                value="{/client/name}"
+                width="60%"
+                valueLiveUpdate="true"
+            />
+            <Text id="idText" class="sapUiSmallMargin boldElement" text="{i18n>hello} {/client/name}"/>
+        </content>
+    </Panel>
+</mvc:View>
