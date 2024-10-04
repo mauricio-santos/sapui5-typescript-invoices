@@ -1,0 +1,11 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+>
+    <Dialog id="idDialog" title="{i18n>hello} {/client/name}">
+        <beginButton>
+            <Button id="idOkButton" text="{i18n>btnCloseDialog}" press="onOkButtonPress"/>
+        </beginButton>
+
+    </Dialog>
+</c:FragmentDefinition>

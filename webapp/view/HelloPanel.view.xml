@@ -6,7 +6,16 @@
 >
     <Panel id="id1Panel" class="sapUiResponsiveMargin" headerText="{i18n>helloPanel}" width="auto">
         <content>
-            <Button id="idSayHelloButton" class="sapUiSmallMarginEnd" text="{i18n>btnSayHello}" press="onSayHelloButtonPress"/>
+            <Button id="idOpenDialogButton"
+                class="sapUiSmallMarginEnd"
+                text="{i18n>btnOpenDialog}"
+                press="onOpenDialogButtonPress"
+            />
+            <Button id="idSayHelloButton" 
+                class="sapUiSmallMarginEnd" 
+                text="{i18n>btnSayHello}" 
+                press="onSayHelloButtonPress"
+            />
             <Input id="idNameInput"
                 value="{/client/name}"
                 width="60%"
