@@ -9,6 +9,14 @@ controllerName="santos.sapui5ts.controller.App"
 	<App id="idApp">
 		<pages>
 			<Page id="id1Page" title="{i18n>homePageTitle}">
+				<headerContent>
+					<Button id="idHelloDialogHeaderButton"
+						class="sapUiSmallMarginEnd"
+						text="{i18n>btnOpenDialog}"
+						press="onHelloDialogButtonPress"
+
+					/>
+				</headerContent>
 				<content>
 					<mvc:XMLView id="idXMLView" viewName="santos.sapui5ts.view.HelloPanel"/>
 					<core:Fragment fragmentName="santos.sapui5ts.fragments.SimpleForm" type="XML"/>

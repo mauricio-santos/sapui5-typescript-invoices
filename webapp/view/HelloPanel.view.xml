@@ -6,10 +6,10 @@
 >
     <Panel id="id1Panel" class="sapUiResponsiveMargin" headerText="{i18n>helloPanel}" width="auto">
         <content>
-            <Button id="idOpenDialogButton"
+            <Button id="idHelloDialogButton"
                 class="sapUiSmallMarginEnd"
                 text="{i18n>btnOpenDialog}"
-                press="onOpenDialogButtonPress"
+                press="onHelloDialogButtonPress"
             />
             <Button id="idSayHelloButton" 
                 class="sapUiSmallMarginEnd" 
