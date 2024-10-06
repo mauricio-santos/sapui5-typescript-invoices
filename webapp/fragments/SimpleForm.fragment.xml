@@ -7,11 +7,33 @@
 		<content>
 			<form:SimpleForm id="idSimpleForm" editable="true">
 				<form:content>
-					<Label id="idNameLabel" text="{i18n>name}"/>
-					<Input id="idNameFragInput" width="50%" value="{/client/name}"/>
-					<Label id="idAgeLabel" text="{i18n>age}"/>
-					<Input id="idAgeFragInput" width="20%" value="{/client/age}"/>
+					<Label id="idFirstNameLabel" text="{i18n>firstName}" labelFor="idFirstNameInput"/>
+					<Input id="idFirstNameInput" placeholder="{i18n>placeHolderFirstName}" required="true"/>
+
+					<Label id="idLastNameLabel" text="{i18n>lastName}" labelFor="idLastNameInput"/>
+					<Input id="idLastNameInput" placeholder="{i18n>placeHolderLastName}" required="true"/>
+					
+					<Label id="idBirthdayLabel" text="{i18n>birthday}" labelFor="idDatePicker"/>
+					<DatePicker id="idDatePicker"
+						placeholder="{i18n>birthday}"
+						width="50%"
+						required="true"
+					/>
+
+					<Label id="idGenderLabel"  text="{i18n>gender}" labelFor="idGenderSelect"/>
+					<Select id="idGenderSelect" width="50%" required="true">
+						<core:Item id="idSelectYourGender0Item" key="" text="{i18n>placeHolderGender}"/>
+						<core:Item id="idMaleItem" key="Male" text="{i18n>male}"/>
+						<core:Item id="idFemaleItem" key="Female" text="{i18n>female}"/>
+					</Select>
+
+					<Label id="idNotesLabel"  text="{i18n>notes}" labelFor="idNoteTextArea"/>
+					<FlexBox id="idNotesFlexBox" justifyContent="SpaceBetween" alignItems="Center" width="100%">
+						<TextArea  id="idNoteTextArea" placeholder="{i18n>notes}" rows="3" cols="120"/>
+						<Button id="idSendButton" class="sapUiMediumMarginEnd" icon="sap-icon://paper-plane"/>
+					</FlexBox>
 				</form:content>
+				
 			</form:SimpleForm>
 		</content>
 	</Panel>
