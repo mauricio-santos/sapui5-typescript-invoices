@@ -12,7 +12,7 @@ controllerName="santos.sapui5ts.controller.App"
 				<headerContent>
 					<Button id="idHelloDialogHeaderButton"
 						class="sapUiSmallMarginEnd"
-						text="{i18n>btnOpenDialog}"
+						icon="sap-icon://action"
 						press="onHelloDialogButtonPress"
 
 					/>

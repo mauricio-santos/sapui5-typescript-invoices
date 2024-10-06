@@ -3,6 +3,12 @@
 	xmlns:c="sap.ui.core"
 >
     <Dialog id="idHelloDialog" title="{i18n>hello} {/client/name}">
+    <c:Icon id="idHelloIcon"
+        class="sapUiMediumMargin"
+        src="sap-icon://hello-world"
+        size="8rem"
+    >
+    </c:Icon>
         <beginButton>
             <Button id="idOkDialogButton" text="{i18n>btnCloseDialog}" press="onOkButtonPress"/>
         </beginButton>
