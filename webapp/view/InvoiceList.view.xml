@@ -1,4 +1,5 @@
-<mvc:View 
+<mvc:View
+    controllerName="santos.sapui5ts.controller.InvoiceList"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
 >
@@ -11,6 +12,17 @@
         <items>
             <ObjectListItem id="idInvoicesObjectListItem"
                 title="{invoicesModel>Quantity} x {invoicesModel>ProductName}"
+                number="{
+                    parts: [
+                        'invoicesModel>ExtendedPrice',
+                        'currencyModel>/eur'
+                    ],
+                    type: 'sap.ui.model.type.Currency',
+                    formatOptions: {
+                        showMeasure: false
+                    }
+                }"
+                numberUnit="{currencyModel>/eur}"
             />
         </items>
     
