@@ -51,6 +51,10 @@
         "settings": {
           "bundleName": "santos.sapui5ts.i18n.i18n"
         }
+      },
+      "invoicesModel": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/localInvoices.json"
       }
     },
     "resources": {

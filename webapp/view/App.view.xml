@@ -20,6 +20,7 @@ controllerName="santos.sapui5ts.controller.App"
 				<content>
 					<mvc:XMLView id="idXMLView" viewName="santos.sapui5ts.view.HelloPanel"/>
 					<core:Fragment fragmentName="santos.sapui5ts.fragments.SimpleForm" type="XML"/>
+					<mvc:XMLView id="idInvoicesXMLView" viewName="santos.sapui5ts.view.InvoiceList"/>
 				</content>
 			</Page>
 		</pages>
