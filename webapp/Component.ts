@@ -1,14 +1,13 @@
 import UIComponent from "sap/ui/core/UIComponent";
 import ClientsModel from "./model/ClientsModel";
 import Control from "sap/ui/core/Control";
-import HelloDialogHelper from "./helper/HelloDialogHelper";
+import DialogsHelper from "./helper/DialogsHelper";
 
 /**
  * @namespace santos.sapui5ts
  */
 export default class Component extends UIComponent {
-
-    private helloDialog?: HelloDialogHelper;
+    private dialogsHelper?: DialogsHelper;
 
     public static metadata = {
         "manifest": "json"
@@ -23,18 +22,18 @@ export default class Component extends UIComponent {
         const oClients = (new ClientsModel).create();
         this.setModel(oClients);
 
-        //Load HelloDialog
-        const rootController: Control = this.getRootControl();        
-        this.helloDialog = new HelloDialogHelper(rootController);
+        //Load Dialogs
+        const rootController: Control = this.getRootControl();
+        this.dialogsHelper = new DialogsHelper(rootController);        
     };
 
     public exit(): void | undefined {
-        this.helloDialog?.destroy();
-        delete this.helloDialog;
+        this.dialogsHelper?.destroy();
+        delete this.dialogsHelper;
     }
 
-    public openDialog(): void | undefined {
-        this.helloDialog?.open();
+    public openDialog(sDialogName: string, sIdDialog: string) {
+        this.dialogsHelper?.open(sDialogName, sIdDialog);
     }
 
 }

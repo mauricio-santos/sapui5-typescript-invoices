@@ -10,7 +10,7 @@
     >
     </c:Icon>
         <beginButton>
-            <Button id="idOkDialogButton" text="{i18n>btnCloseDialog}" press="onOkButtonPress"/>
+            <Button id="idOkDialogButton" text="{i18n>btnCloseDialog}" press="onCloseDialog"/>
         </beginButton>
 
     </Dialog>

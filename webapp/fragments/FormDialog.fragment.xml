@@ -1,0 +1,164 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Dialog id="idFormDialog" title="{i18n>formDialogTitle}" contentWidth="100%">
+		<VBox id="idVBox" class="sapUiSmallMargin">
+			<f:Form id="idForm" editable="true">
+				<!-- <f:title>
+					<core:Title id="idAddressTitle" text="Address" />
+				</f:title> -->
+
+				<f:layout>
+					<f:ResponsiveGridLayout id="idResponsiveGridLayout"
+						labelSpanXL="4"
+						labelSpanM="12"
+						adjustLabelSpan="false"
+						emptySpanXL="0"
+						columnsXL="2"
+						singleContainerFullSize="false" />
+				</f:layout>
+
+				<f:formContainers>					
+					<f:FormContainer id="idPersonalInformationFormContainer" title="{i18n>personalInformation}">
+						<f:formElements>		
+
+							<f:FormElement id="idFirstNameFormElement" label="{i18n>firstName}">
+								<f:fields>
+									<Input id="idFirstNameDialogInput" required="true"/>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="idLastNameFormElement" label="{i18n>lastName}">
+								<f:fields>
+									<Input id="idLastNameDialogInput" required="true"/>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="idBirthdayFormElement" label="{i18n>birthday}">
+								<f:fields>
+									<DatePicker id="idBirthdayDatePicker"
+										placeholder="{i18n>birthday}"
+										width="50%"
+										required="true"
+									/>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="idNationalizedFormElement" label="{i18n>nationalized}">
+								<f:fields>
+									<Switch id="idNatinalizedSwitch" 
+										state="true" 
+										customTextOn="yes" 
+										customTextOff="no"
+									/>				
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="idNotesFormElement" label="{i18n>notes}">
+								<f:fields>
+									<TextArea id="idNotesTextArea"/>
+								</f:fields>					
+							</f:FormElement>
+
+						</f:formElements>
+					</f:FormContainer>
+					
+					<f:FormContainer id="idAddressFormContainer" title="{i18n>address}">
+						<f:formElements>
+
+							<f:FormElement id="idCountryFormElement" label="{i18n>country}">
+								<f:fields>
+									<Select id="idCountrySelect" selectedKey="" required="true">
+										<items>
+											<core:Item id="idSelectACountryItem" text="{i18n>countrySelect}" key=""/>
+											<core:Item id="idEnglandItem" text="England" key="England"/>
+											<core:Item id="idGermanyItem" text="Germany" key="Germany"/>
+											<core:Item id="idUSAItem" text="USA" key="USA"/>
+										</items>
+									</Select>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="idDepartamentFormElement" label="{i18n>departament}">
+								<f:fields>
+									<Select id="idDepartamentSelect" selectedKey="" required="true">
+										<items>
+											<core:Item id="idSelectADepartamentItem" text="{i18n>departamentSelect}" key=""/>
+											<core:Item id="idNorthWestItem" text="North West" key="North West"/>
+											<core:Item id="idBrandeburgItem" text="Brandeburg" key="Brandeburg"/>
+											<core:Item id="idArizonaItem" text="Arizona" key="Arizona"/>
+										</items>
+									</Select>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="idCityFormElement" label="{i18n>city}">
+								<f:fields>
+									<Select id="idCitySelect" selectedKey="" required="true">
+										<items>
+											<core:Item id="idSelectACityItem" text="{i18n>citySelect}" key=""/>
+											<core:Item id="idManchesterItem" text="Manchester" key="Manchester"/>
+											<core:Item id="idBerlinItem" text="Berlin" key="Berlin"/>
+											<core:Item id="idSanLuizItem" text="San Luiz" key="San Luiz"/>
+										</items>
+									</Select>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="idAddressFormElement" label="{i18n>address}">
+								<f:fields>
+									<TextArea id="idAddressTextArea" placeholder="{i18n>placeHolderAddress}"/>
+								</f:fields>
+							</f:FormElement>												
+
+						</f:formElements>
+					</f:FormContainer>
+
+				</f:formContainers>
+
+			</f:Form>
+			<f:Form id="idContactForm" editable="true">
+				<!-- <f:title>
+					<core:Title text="More" />
+				</f:title> -->
+				<f:layout>
+					<f:ResponsiveGridLayout id="id2ResponsiveGridLayout"
+						labelSpanXL="4"
+						labelSpanM="12"
+						adjustLabelSpan="false"
+						emptySpanXL="0"
+						columnsXL="2"
+						singleContainerFullSize="false" />
+				</f:layout>
+
+				<f:formContainers>
+					<f:FormContainer id="idContactFormContainer" title="{i18n>contactData}">
+						<f:formElements>
+							<f:FormElement id="idEmailFormElement" label="{i18n>email}">
+								<f:fields>
+									<Input id="idEMailInput" type="Email" placeholder="{i18n>placeHolderEmail}" required="true"/>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="idPersonalTelFormElement" label="{i18n>personalTelefon}">
+								<f:fields>
+									<Input id="idPersonalTelInput" type="Tel" placeholder="{i18n>placeHolderTel}" required="true"/>
+								</f:fields>
+							</f:FormElement>
+
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</VBox>
+
+		<beginButton>
+			<Button id="idCancellButton" text="{i18n>cancell}" icon="sap-icon://cancel" type="Reject" press="onCloseDialog"/>
+		</beginButton>
+		<endButton>
+			<Button id="idSaveButton" text="{i18n>save}" icon="sap-icon://save" type="Accept"/>
+		</endButton>
+    </Dialog>
+</core:FragmentDefinition>

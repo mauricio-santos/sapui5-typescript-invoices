@@ -16,13 +16,17 @@ export default class HelloPanel extends Controller {
     
     public onSayHelloButtonPress(): void {
         const oBudle = (<ResourceBundle>(<ResourceModel>this.getView()?.getModel("i18n"))?.getResourceBundle());
-        const oClientModel = (<JSONModel>this.getView()?.getModel())?.getProperty("/client/name")        
+        const oClientModel = (<JSONModel>this.getView()?.getModel())?.getProperty("/client/name")    
         const msg = oBudle.getText("msgHelloClient", [oClientModel]) || 'no text defined';
 
         MessageToast.show(msg);
     }
 
-    public onHelloDialogButtonPress() {        
-        (this.getOwnerComponent() as Component).openDialog();
+    public onHelloDialogButtonPress() {   
+        (this.getOwnerComponent() as Component).openDialog("HelloDialog", "idHelloDialog");
+    }
+
+    public onButtonFormDialogPress() {
+        (this.getOwnerComponent() as Component).openDialog("FormDialog", "idFormDialog");
     }
 }

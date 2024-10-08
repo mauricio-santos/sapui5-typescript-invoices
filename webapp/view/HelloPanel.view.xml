@@ -23,6 +23,11 @@
                 valueLiveUpdate="true"
             />
             <Text id="idText" class="sapUiSmallMargin boldElement" text="{i18n>hello} {/client/name}"/>
+            <Button id="idShowFormDialogButton"
+                class="sapUiSmallMarginBegin"
+                icon="sap-icon://create" 
+                press="onButtonFormDialogPress"
+            />
         </content>
     </Panel>
 </mvc:View>
