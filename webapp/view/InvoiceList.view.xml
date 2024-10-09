@@ -23,6 +23,7 @@
                     }
                 }"
                 numberUnit="{currencyModel>/eur}"
+                numberState="{= ${invoicesModel>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
             />
         </items>
     
