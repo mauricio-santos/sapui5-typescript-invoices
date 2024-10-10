@@ -11,7 +11,9 @@
         items="{
             path: 'invoicesModel>/Invoices',
             sorter: {
-                path: 'ProductName'
+                path: 'ShipperName',
+                group: true
+
             }
         
         }"
