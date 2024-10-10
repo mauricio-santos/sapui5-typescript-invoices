@@ -8,7 +8,13 @@
         class="sapUiResponsiveMargin"
         headerText="{i18n>invoiceListTitle}"
         width="auto"
-        items="{invoicesModel>/Invoices}"
+        items="{
+            path: 'invoicesModel>/Invoices',
+            sorter: {
+                path: 'ProductName'
+            }
+        
+        }"
     >
         <headerToolbar>
             <Toolbar id="idInvoiceToolbar">
