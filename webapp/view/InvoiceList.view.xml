@@ -10,6 +10,14 @@
         width="auto"
         items="{invoicesModel>/Invoices}"
     >
+        <headerToolbar>
+            <Toolbar id="idInvoiceToolbar">
+                <Title id="idInvoicesTitle" text="{i18n>invoiceListTitle}"/>
+                <ToolbarSpacer id="idToolbarSpacer"/>
+                <SearchField id="idInvoiceSearchField" width="50%" search="onFilterInvoices"></SearchField>
+            </Toolbar>
+        </headerToolbar>
+
         <items>
             <ObjectListItem id="idInvoicesObjectListItem"
                 title="{invoicesModel>Quantity} x {invoicesModel>ProductName}"

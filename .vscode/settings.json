@@ -1,0 +1,45 @@
+{
+    "ui5.plugin.idGenerationFormula": "id{MeaningAssumption}{TabStop}{Counter}{ControlName}",
+    "ui5.plugin.eventHandlerGenerationFormula": "on{MeaningAssumption}{TabStop}{ControlName}{EventName}",
+    "ui5.plugin.addInheritedPropertiesAndAggregations": true,
+    "ui5.plugin.bulkExportToi18nCommandData": [
+
+        {
+            "className": "*",
+            "properties": [
+                "text",
+                "title",
+                "info",
+                "placeholder",
+                "tooltip",
+                "iconTooltip",
+                "intro"
+            ]
+        },
+        {
+            "className": "sap.m.ListItemBase",
+            "applyToChildren": true,
+            "properties": [
+                "highlightText"
+            ]
+        },
+        {
+            "className": "sap.m.ListBase",
+            "applyToChildren": true,
+            "properties": [
+                "footerText",
+                "growingTriggerText",
+                "headerText",
+                "noDataText"
+            ]
+        }
+    ],
+    "ui5.plugin.generateIdsCommandData": {
+        
+        "excludeClasses": [
+            "sap.ui.core.mvc.View",
+            "sap.ui.core.FragmentDefinition"
+        ],
+        "generateIdsForElements": true
+    }
+}
