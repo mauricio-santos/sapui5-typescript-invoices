@@ -9,7 +9,7 @@
         headerText="{i18n>invoiceListTitle}"
         width="auto"
         items="{
-            path: 'invoicesModel>/Invoices',
+            path: 'northwindModel>/Invoices',
             sorter: {
                 path: 'ShipperName',
                 group: true
@@ -28,10 +28,10 @@
 
         <items>
             <ObjectListItem id="idInvoicesObjectListItem"
-                title="{invoicesModel>Quantity} x {invoicesModel>ProductName}"
+                title="{northwindModel>Quantity} x {northwindModel>ProductName}"
                 number="{
                     parts: [
-                        'invoicesModel>ExtendedPrice',
+                        'northwindModel>ExtendedPrice',
                         'currencyModel>/eur'
                     ],
                     type: 'sap.ui.model.type.Currency',
@@ -40,9 +40,9 @@
                     }
                 }"
                 numberUnit="{currencyModel>/eur}"
-                numberState="{= ${invoicesModel>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
+                numberState="{= ${northwindModel>ExtendedPrice} > 500 ? 'Success' : 'Error' }"
             >
-                <firstStatus>
+                <!-- <firstStatus>
                     <ObjectStatus id="idStatusObjectStatus"
                         core:require="{
                             Formatter: 'santos/sapui5ts/model/formatter'
@@ -52,7 +52,7 @@
                             formatter: 'Formatter.statusText.bind($controller)'
                         }"
                     />
-                </firstStatus>
+                </firstStatus> -->
             </ObjectListItem>
         </items>
     </List>
