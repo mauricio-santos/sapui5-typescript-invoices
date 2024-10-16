@@ -25,6 +25,7 @@
   "scripts": {
     "start": "fiori run --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#santossapui5ts-display\"",
     "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#santossapui5ts-display\"",
+    "start-mockserver": "ui5 server -o test/mockServer.html",
     "build": "ui5 build --config=ui5.yaml --clean-dest --dest dist",
     "lint": "eslint ./",
     "ts-typecheck": "tsc --noEmit",
