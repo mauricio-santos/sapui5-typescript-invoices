@@ -52,6 +52,32 @@
             "FIORI_TOOLS_BACKEND_CONFIG": "[{\"destination\":\"Northwind\",\"url\":\"https://services.odata.org/\",\"path\":\"/V2\"}]",
             "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
         }
+    },
+    {
+        "name": "sapui5ts-QUnit",
+        "cwd": "${workspaceFolder}",
+        "runtimeArgs": [
+            "fiori",
+            "run"
+        ],
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npx",
+        "args": [
+            "--open",
+            "test/unit/unitTests.qunit.html"
+        ],
+        "windows": {
+            "runtimeExecutable": "npx.cmd"
+        },
+        "console": "internalConsole",
+        "internalConsoleOptions": "openOnSessionStart",
+        "outputCapture": "std",
+        "env": {
+            "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/sapui5ts\"}",
+            "FIORI_TOOLS_BACKEND_CONFIG": "[{\"destination\":\"Northwind\",\"url\":\"https://services.odata.org/\",\"path\":\"/V2\"}]",
+            "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+        }
     }
   ]
 }
