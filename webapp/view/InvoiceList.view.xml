@@ -42,17 +42,17 @@
                 numberUnit="{currencyModel>/eur}"
                 numberState="{= ${northwindModel>ExtendedPrice} > 500 ? 'Success' : 'Error' }"
             >
-                <!-- <firstStatus>
+                <firstStatus>
                     <ObjectStatus id="idStatusObjectStatus"
                         core:require="{
                             Formatter: 'santos/sapui5ts/model/formatter'
                         }"
                         text="{
-                            path: 'invoicesModel>Status',
+                            path: 'northwindModel>Status',
                             formatter: 'Formatter.statusText.bind($controller)'
                         }"
                     />
-                </firstStatus> -->
+                </firstStatus>
             </ObjectListItem>
         </items>
     </List>
