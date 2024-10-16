@@ -4,6 +4,7 @@ import { SearchField$SearchEvent } from "sap/ui/commons/SearchField";
 import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
 import ListBinding from "sap/ui/model/ListBinding";
+import UIComponent from "sap/ui/core/UIComponent";
 
 /**
  * @namespace santos.sapui5ts.controller
@@ -28,5 +29,10 @@ export default class InvoiceList extends Controller {
         const binding = list?.getBinding("items") as ListBinding;
         binding?.filter(filter);
 	}
+
+    onObjectListItemPress(): void {
+        const router = UIComponent.getRouterFor(this);
+        router.navTo("detail");
+    }
 }
 

@@ -10,7 +10,7 @@ export default class App extends Controller {
 
     }
 
-    onHelloDialogButtonPress() {
+    onButtonHelloDialogPress() {
         (this.getOwnerComponent() as Component).openDialog("HelloDialog", "idHelloDialog");
     }
 }

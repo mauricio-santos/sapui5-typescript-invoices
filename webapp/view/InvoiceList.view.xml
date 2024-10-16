@@ -41,6 +41,8 @@
                 }"
                 numberUnit="{currencyModel>/eur}"
                 numberState="{= ${northwindModel>ExtendedPrice} > 500 ? 'Success' : 'Error' }"
+                type="Navigation"
+                press="onObjectListItemPress"
             >
                 <firstStatus>
                     <ObjectStatus id="idStatusObjectStatus"

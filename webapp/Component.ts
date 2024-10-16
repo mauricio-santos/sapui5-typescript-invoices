@@ -19,10 +19,10 @@ export default class Component extends UIComponent {
         super.init();
 
         // Check if mock server should be started
-        sap.ui.require(["santos/sapui5ts/localService/mockserver"], (mockserver) => {
-            mockserver.init();
-            // console.log("Mock server initialized! ON COMPONENT");
-        });
+        // sap.ui.require(["santos/sapui5ts/localService/mockserver"], (mockserver) => {
+        //     mockserver.init();
+        //     // console.log("Mock server initialized! ON COMPONENT");
+        // });
 
         //set model Clients
         const oClients = (new ClientsModel).create();
@@ -31,6 +31,9 @@ export default class Component extends UIComponent {
         //Load Dialogs
         const rootController: Control = this.getRootControl();
         this.dialogsHelper = new DialogsHelper(rootController);
+
+        //create the views based on the url/hash
+        this.getRouter().initialize();
     };
 
     public exit(): void | undefined {

@@ -1,0 +1,23 @@
+<mvc:View
+    controllerName="santos.sapui5ts.controller.App"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	displayBlock="true"
+>
+    <Page id="id1Page" title="{i18n>homePageTitle}">
+        <headerContent>
+            <Button id="idHelloDialogHeaderButton"
+                class="sapUiSmallMarginEnd"
+                icon="sap-icon://action"
+                press="onButtonHelloDialogPress"
+
+            />
+        </headerContent>
+        <content>
+            <mvc:XMLView id="idXMLView" viewName="santos.sapui5ts.view.HelloPanel"/>
+            <core:Fragment fragmentName="santos.sapui5ts.fragments.SimpleForm" type="XML"/>
+            <mvc:XMLView id="idInvoicesXMLView" viewName="santos.sapui5ts.view.InvoiceList"/>
+        </content>
+    </Page>
+</mvc:View>
