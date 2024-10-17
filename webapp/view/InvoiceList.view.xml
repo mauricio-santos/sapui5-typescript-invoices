@@ -13,7 +13,6 @@
             sorter: {
                 path: 'ShipperName',
                 group: true
-
             }
         
         }"
@@ -22,7 +21,7 @@
             <Toolbar id="idInvoiceToolbar">
                 <Title id="idInvoicesTitle" text="{i18n>invoiceListTitle}"/>
                 <ToolbarSpacer id="idToolbarSpacer"/>
-                <SearchField id="idInvoiceSearchField" width="50%" search="onFilterInvoices"></SearchField>
+                <SearchField id="idInvoiceSearchField" width="50%" search="onSearchFieldInvoiceSearch"></SearchField>
             </Toolbar>
         </headerToolbar>
 

@@ -1,7 +1,7 @@
 <mvc:View controllerName="santos.sapui5ts.controller.Detail"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
-	<Page id="idPage" title="{i18n>detailPageTitle}">
+	<Page id="idPage" title="{i18n>detailPageTitle}" showNavButton="true" navButtonPress=".onPageItemNavButtonPress">
 		<ObjectHeader id="idObjectHeader" intro="{northwindModel>ShipperName}" title="{northwindModel>ProductName}">
 			<ObjectAttribute id="idShipNameObjectAttribute" text="{northwindModel>ShipName}" />
 			<ObjectAttribute id="idShipAddressObjectAttribute" text="{northwindModel>ShipAddress}" />

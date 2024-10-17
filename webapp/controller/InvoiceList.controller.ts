@@ -19,7 +19,7 @@ export default class InvoiceList extends Controller {
         });        
         this.getView()?.setModel(currencyModel, "currencyModel")
     }
-	onFilterInvoices(event: SearchField$SearchEvent): void {        
+	onSearchFieldInvoiceSearch(event: SearchField$SearchEvent): void {        
 		//build filter array
         const filter = [];
         const query = event.getParameter("query");
