@@ -1,9 +1,16 @@
-<mvc:View
+<mvc:View controllerName="santos.sapui5ts.controller.Detail"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
-	<Page id="idPage"
-		title="{i18n>detailPageTitle}">
-		<ObjectHeader id="idObjectHeader"
-			title="Invoice"/>
+	<Page id="idPage" title="{i18n>detailPageTitle}">
+		<ObjectHeader id="idObjectHeader" intro="{northwindModel>ShipperName}" title="{northwindModel>ProductName}">
+			<ObjectAttribute id="idShipNameObjectAttribute" text="{northwindModel>ShipName}" />
+			<ObjectAttribute id="idShipAddressObjectAttribute" text="{northwindModel>ShipAddress}" />
+			<ObjectAttribute id="idShipCityObjectAttribute" text="{northwindModel>ShipCity}" />
+			<ObjectAttribute id="idShipRegionObjectAttribute" text="{northwindModel>ShipRegion}" />
+			<ObjectAttribute id="idShipPostalCodeObjectAttribute" text="{northwindModel>ShipPostalCode}" />
+			<ObjectAttribute id="idShipCountryObjectAttribute" text="{northwindModel>ShipCountry}" />
+			<ObjectAttribute id="idCustomerIDObjectAttribute" text="{northwindModel>CustomerID}" />
+			<ObjectAttribute id="idCustomerNameObjectAttribute" text="{northwindModel>CustomerName}" />
+		</ObjectHeader>
 	</Page>
 </mvc:View>

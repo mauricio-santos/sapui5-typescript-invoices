@@ -5,6 +5,8 @@ import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
 import ListBinding from "sap/ui/model/ListBinding";
 import UIComponent from "sap/ui/core/UIComponent";
+import ObjectListItem from "sap/m/ObjectListItem";
+import Event from "sap/ui/base/Event";
 
 /**
  * @namespace santos.sapui5ts.controller
@@ -30,9 +32,15 @@ export default class InvoiceList extends Controller {
         binding?.filter(filter);
 	}
 
-    onObjectListItemPress(): void {
+    onObjectListItemPress(event: Event): void {
+        const item: ObjectListItem = event.getSource();
+        const path = item.getBindingContext("northwindModel")?.getPath().substring(1) || false;
+        const uri = window.encodeURIComponent(path);
         const router = UIComponent.getRouterFor(this);
-        router.navTo("detail");
+
+        router.navTo("detail", {
+            invoicePath: uri
+        });
     }
 }
 
