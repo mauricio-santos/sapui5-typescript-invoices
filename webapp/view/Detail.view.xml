@@ -1,6 +1,9 @@
-<mvc:View controllerName="santos.sapui5ts.controller.Detail"
+<mvc:View 
+	controllerName="santos.sapui5ts.controller.Detail"
 	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:cust="santos.sapui5ts.control"
+>
 	<Page id="idPage" title="{i18n>detailPageTitle}" showNavButton="true" navButtonPress=".onPageItemNavButtonPress">
 		<ObjectHeader id="idObjectHeader" intro="{northwindModel>ShipperName}" title="{northwindModel>ProductName}">
 			<ObjectAttribute id="idShipNameObjectAttribute" text="{northwindModel>ShipName}" />
@@ -12,5 +15,10 @@
 			<ObjectAttribute id="idCustomerIDObjectAttribute" text="{northwindModel>CustomerID}" />
 			<ObjectAttribute id="idCustomerNameObjectAttribute" text="{northwindModel>CustomerName}" />
 		</ObjectHeader>
+		<cust:ProductRating id="idProductRating"
+			tooltip="{northwindModel>ProductName}"
+			class="sapUiSmallMarginBeginEnd"
+			change="onProductRatingChange"
+		/>
 	</Page>
 </mvc:View>

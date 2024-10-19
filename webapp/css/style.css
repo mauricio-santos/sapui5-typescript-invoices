@@ -1,3 +1,22 @@
 .boldElement {
     font-weight: bold;
 }
+
+/*  Custom Controls */
+.myAppDemoWT .myCustomButton.sapMBtn {
+    margin-right: 0.125rem
+}
+
+.myAppDemoWT .myCustomText {
+    display: inline-block;
+    font-weight: bold;
+}
+
+/*  ProductRating */
+.myAppDemoWTProductRating {
+    padding: 0.75rem;
+}
+
+.myAppDemoWTProductRating .sapMRI {
+    vertical-align: initial;
+}
