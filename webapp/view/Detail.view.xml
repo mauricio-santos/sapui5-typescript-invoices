@@ -5,7 +5,12 @@
 	xmlns:cust="santos.sapui5ts.control"
 >
 	<Page id="idPage" title="{i18n>detailPageTitle}" showNavButton="true" navButtonPress=".onPageItemNavButtonPress">
-		<ObjectHeader id="idObjectHeader" intro="{northwindModel>ShipperName}" title="{northwindModel>ProductName}">
+		<ObjectHeader id="idObjectHeader" 
+			intro="{northwindModel>ShipperName}" 
+			title="{northwindModel>ProductName}"
+			responsive="true"
+			fullScreenOptimized="true"
+		>
 			<ObjectAttribute id="idShipNameObjectAttribute" text="{northwindModel>ShipName}" />
 			<ObjectAttribute id="idShipAddressObjectAttribute" text="{northwindModel>ShipAddress}" />
 			<ObjectAttribute id="idShipCityObjectAttribute" text="{northwindModel>ShipCity}" />
