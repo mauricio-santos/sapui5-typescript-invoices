@@ -9,7 +9,8 @@ export default {
             case "A":   return resourceBundle.getText("invoiceStatusA");
             case "B":   return resourceBundle.getText("invoiceStatusB");
             case "C":   return resourceBundle.getText("invoiceStatusC");
-            default:    return status;
+            default:    return resourceBundle.getText("invoiceStatusA");
+ //return status;
         }
     }
 };

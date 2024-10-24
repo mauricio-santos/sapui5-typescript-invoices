@@ -27,12 +27,12 @@ export default class InvoiceList extends Controller {
         query && filter.push(new Filter("ProductName", FilterOperator.Contains, query));
 
         //filter binding
-        const list = this.byId("idInvoicesList");
+        const list = this.byId("idInvoicesTable");
         const binding = list?.getBinding("items") as ListBinding;
         binding?.filter(filter);
 	}
 
-    onObjectListItemPress(event: Event): void {
+    onColumnListItemPress(event: Event): void {
         const item: ObjectListItem = event.getSource();
         const path = item.getBindingContext("northwindModel")?.getPath().substring(1) || false;
         const uri = window.encodeURIComponent(path);
