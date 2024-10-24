@@ -13,13 +13,13 @@
     >
         <content>
             <Button id="idHelloDialogButton"
-                class="sapUiSmallMarginEnd"
+                class="sapUiSmallMarginEnd sapUiVisibleOnlyOnDesktop"
                 text="{i18n>btnHelloDialog}"
                 icon="sap-icon://action"
                 press="onHelloDialogButtonPress"
             />
             <Button id="idSayHelloButton" 
-                class="sapUiSmallMarginEnd" 
+                class="sapUiSmallMarginEnd sapUiHideOnDesktop" 
                 text="{i18n>btnSayHello}" 
                 press="onSayHelloButtonPress"
             />

@@ -12,7 +12,6 @@ export default class Component extends UIComponent {
     private dialogsHelper?: DialogsHelper;
 
     public static metadata = {
-        "interfaces": ["sap.ui.core.IAsyncContentCreation"],
         "manifest": "json"
     };
 
@@ -31,7 +30,6 @@ export default class Component extends UIComponent {
 
         //set device model
         let deviceModel = new JSONModel(Device);
-        console.log(deviceModel);
         deviceModel.setDefaultBindingMode("OneWay");
         this.setModel(deviceModel, "deviceModel");
         
