@@ -46,4 +46,8 @@ export default class Component extends UIComponent {
         this.dialogsHelper?.open(sDialogName, sIdDialog);
     }
 
+    public getContentDensityClass() {
+        return Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact"
+    }
+
 }

@@ -7,7 +7,9 @@ import Component from "../Component";
 export default class App extends Controller {
 
     public onInit(): void {
-
+        //Content Density
+        const appStyle = (this.getOwnerComponent() as Component).getContentDensityClass(); 
+        this.getView()?.addStyleClass(appStyle);
     }
 
     onButtonHelloDialogPress() {
