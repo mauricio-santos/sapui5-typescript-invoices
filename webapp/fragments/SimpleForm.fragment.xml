@@ -3,7 +3,12 @@
 	xmlns:core="sap.ui.core"
 	xmlns:form="sap.ui.layout.form"
 >
-	<Panel id="idFragmentPanel" class="sapUiResponsiveMargin" headerText="{i18n>fragmentTittle}" width="auto">
+	<Panel id="idFragmentPanel" 
+		class="sapUiResponsiveMargin" 
+		headerText="{i18n>fragmentTittle}" 
+		width="auto"
+		expandable="true"
+	>
 		<content>
 			<form:SimpleForm id="idSimpleForm" editable="true">
 				<form:content>

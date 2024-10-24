@@ -4,7 +4,13 @@
 	xmlns="sap.m"
 	displayBlock="true"
 >
-    <Panel id="id1Panel" class="sapUiResponsiveMargin" headerText="{i18n>helloPanel}" width="auto">
+    <Panel id="id1Panel" 
+        class="sapUiResponsiveMargin" 
+        headerText="{i18n>helloPanel}" 
+        width="auto"
+        expandable="{deviceModel>/system/phone}"
+        expanded="{= !${deviceModel>/system/phone}}"
+    >
         <content>
             <Button id="idHelloDialogButton"
                 class="sapUiSmallMarginEnd"
