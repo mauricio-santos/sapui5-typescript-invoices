@@ -4,18 +4,7 @@
     xmlns:core="sap.ui.core"    
     xmlns:mvc="sap.ui.core.mvc"
 >
-    <Table id="idInvoicesTable"
-        class="sapUiResponsiveMargin"
-        headerText="{i18n>invoiceListTitle}"
-        width="auto"
-        items="{
-            path: 'northwindModel>/Invoices',
-            sorter: {
-                path: 'ShipperName',
-                group: true
-            }
-        }"
-    >
+    <Panel id="idInvoicesPanel" accessibleRole="Region">
         <headerToolbar>
             <Toolbar id="idInvoiceToolbar">
                 <Title id="idInvoicesTitle" text="{i18n>invoiceListTitle}"/>
@@ -24,81 +13,93 @@
             </Toolbar>
         </headerToolbar>
 
-        <columns>
+        <Table id="idInvoicesTable"
+            class="sapUiResponsiveMargin"
+            headerText="{i18n>invoiceListTitle}"
+            width="auto"
+            items="{
+                path: 'northwindModel>/Invoices',
+                sorter: {
+                    path: 'ShipperName',
+                    group: true
+                }
+            }"
+        >
+            <columns>
 
-            <!-- Column Quantity -->
-            <Column id="idQuantityColumn" hAlign="End" minScreenWidth="Small" demandPopin="true" width="5em">
-                <Text id="idQuantityText" text="{i18n>columnQuantity}"/>           
-            </Column>
+                <!-- Column Quantity -->
+                <Column id="idQuantityColumn" hAlign="End" minScreenWidth="Small" demandPopin="true" width="5em">
+                    <Text id="idQuantityText" text="{i18n>columnQuantity}"/>           
+                </Column>
 
-            <!-- Column Product Name -->
-            <Column id="idProductNameColumn">
-                <Text id="idProductNameText" text="{i18n>columnProductName}"/>
-            </Column>
+                <!-- Column Product Name -->
+                <Column id="idProductNameColumn">
+                    <Text id="idProductNameText" text="{i18n>columnProductName}"/>
+                </Column>
 
-            <!-- Column Status -->
-            <Column id="idStatusColumn" minScreenWidth="Small" demandPopin="true">
-                <Text id="idStatusText" text="{i18n>columnStatus}"/>
-            </Column>
+                <!-- Column Status -->
+                <Column id="idStatusColumn" minScreenWidth="Small" demandPopin="true">
+                    <Text id="idStatusText" text="{i18n>columnStatus}"/>
+                </Column>
 
-            <!-- Column Supplier -->
-            <Column id="idSupplierColumn" minScreenWidth="Tablet">
-                <Text id="idSupplierText" text="{i18n>columnSupplier}"/>
-            </Column>
+                <!-- Column Supplier -->
+                <Column id="idSupplierColumn" minScreenWidth="Tablet">
+                    <Text id="idSupplierText" text="{i18n>columnSupplier}"/>
+                </Column>
 
-            <!-- Column Price -->
-            <Column id="idPriceColumn" hAlign="End">
-                <Text id="idPriceText" text="{i18n>columnPrice}"/>
-            </Column>
+                <!-- Column Price -->
+                <Column id="idPriceColumn" hAlign="End">
+                    <Text id="idPriceText" text="{i18n>columnPrice}"/>
+                </Column>
 
-        </columns>
+            </columns>
 
-        <items>
-            <ColumnListItem id="idInvoiceColumnListItem"
-                type="Navigation"
-                press="onColumnListItemPress"
-            >
+            <items>
+                <ColumnListItem id="idInvoiceColumnListItem"
+                    type="Navigation"
+                    press="onColumnListItemPress"
+                >
+                    <cells>
+                        
+                        <!-- Cell Quantity -->
+                        <ObjectNumber id="idQuantityObjectNumber" number="{northwindModel>Quantity}" emphasized="false"/>
 
-            <cells>
-                
-                <!-- Cell Quantity -->
-                <ObjectNumber id="idQuantityObjectNumber" number="{northwindModel>Quantity}" emphasized="false"/>
+                        <!-- Cell Product Name -->
+                        <ObjectIdentifier id="idProductNameObjectIdentifier" title="{northwindModel>ProductName}"/>
 
-                <!-- Cell Product Name -->
-                <ObjectIdentifier id="idProductNameObjectIdentifier" title="{northwindModel>ProductName}"/>
+                        <!-- Cell Status -->
+                        <ObjectStatus id="idStatusObjectStatus" 
+                            core:require="{
+                                Formatter: 'santos/sapui5ts/model/formatter'
+                            }" 
+                            text="{
+                                path: 'northwindModel>Status',
+                                formatter: 'Formatter.statusText.bind($controller)'
+                            }" 
+                        />
 
-                <!-- Cell Status -->
-                <ObjectStatus id="idStatusObjectStatus" 
-                    core:require="{
-                        Formatter: 'santos/sapui5ts/model/formatter'
-                    }" 
-                    text="{
-                        path: 'northwindModel>Status',
-                        formatter: 'Formatter.statusText.bind($controller)'
-                    }" 
-                />
+                        <!-- Cell Supplier -->
+                        <Text id="idShipperNameText" text="{northwindModel>ShipperName}"/>
 
-                <!-- Cell Supplier -->
-                <Text id="idShipperNameText" text="{northwindModel>ShipperName}"/>
+                        <!-- Cell Price -->
+                        <ObjectNumber id="idPriceObjectNumber"
+                            number="{
+                                parts: [
+                                    'northwindModel>ExtendedPrice',
+                                    'currencyModel>/eur'
+                                ],
+                                type: 'sap.ui.model.type.Currency',
+                                formatOptions: {
+                                    showMeasure: false
+                                }
+                            }" 
+                            unit="{currencyModel>/eur}" 
+                            state="{= ${northwindModel>ExtendedPrice} > 500 ? 'Success' : 'Error' }" 
+                        />
 
-                <!-- Cell Price -->
-                <ObjectNumber id="idPriceObjectNumber"
-                    number="{
-                        parts: [
-                            'northwindModel>ExtendedPrice',
-                            'currencyModel>/eur'
-                        ],
-                        type: 'sap.ui.model.type.Currency',
-                        formatOptions: {
-                            showMeasure: false
-                        }
-                    }" 
-                    unit="{currencyModel>/eur}" 
-                    state="{= ${northwindModel>ExtendedPrice} > 500 ? 'Success' : 'Error' }" 
-                />
-
-            </cells>
-            </ColumnListItem>
-        </items>
-    </Table>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Panel>
 </mvc:View>

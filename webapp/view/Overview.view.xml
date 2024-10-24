@@ -6,6 +6,15 @@
 	displayBlock="true"
 >
     <Page id="id1Page" title="{i18n>homePageTitle}">
+    
+        <landmarkInfo>
+            <PageAccessibleLandmarkInfo id="idPageAccessibleLandmarkInfo"
+                rootLabel="{i18n>Overview_rootLabel}" 
+                contentLabel="{i18n>Overview_contentLabel}" 
+                headerRole="Banner" 
+                headerLabel="{i18n>Overview_headerLabel}"/>
+        </landmarkInfo>
+
         <headerContent>
             <Button id="idHelloDialogHeaderButton"
                 class="sapUiSmallMarginEnd"
