@@ -7,6 +7,7 @@ import ListBinding from "sap/ui/model/ListBinding";
 import UIComponent from "sap/ui/core/UIComponent";
 import ObjectListItem from "sap/m/ObjectListItem";
 import Event from "sap/ui/base/Event";
+import Context from "sap/ui/model/Context";
 
 /**
  * @namespace santos.sapui5ts.controller
@@ -33,8 +34,9 @@ export default class InvoiceList extends Controller {
 	}
 
     onColumnListItemPress(event: Event): void {
-        const item: ObjectListItem = event.getSource();
-        const path = item.getBindingContext("northwindModel")?.getPath().substring(1) || false;
+        const item = event.getSource() as ObjectListItem;
+        const bindContext = item.getBindingContext("northwindModel") as Context;
+        const path = bindContext.getPath().substring(1);
         const uri = window.encodeURIComponent(path);
         const router = UIComponent.getRouterFor(this);
 
