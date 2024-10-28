@@ -94,7 +94,11 @@
                                 }
                             }" 
                             unit="{currencyModel>/eur}" 
-                            state="{= ${northwindModel>ExtendedPrice} > 500 ? 'Success' : 'Error' }" 
+                            state="{=
+                                (${northwindModel>ExtendedPrice} &lt; 500) ? 'Error' :
+                                (${northwindModel>ExtendedPrice} &lt;= 1000) ? 'Success' : 
+                                (${northwindModel>ExtendedPrice} &lt;= 1499.99) ? 'Warning' : 'Information' 
+                            }"
                         />
 
                     </cells>
