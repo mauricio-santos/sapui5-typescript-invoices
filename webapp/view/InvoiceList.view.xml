@@ -9,7 +9,33 @@
             <Toolbar id="idInvoiceToolbar">
                 <Title id="idInvoicesTitle" text="{i18n>invoiceListTitle}"/>
                 <ToolbarSpacer id="idToolbarSpacer"/>
-                <SearchField id="idInvoiceSearchField" width="50%" search="onSearchFieldInvoiceSearch"></SearchField>
+                <SearchField id="idInvoiceSearchField" 
+                    width="50%" 
+                    search="onSearchFieldInvoiceSearch" 
+                />
+
+                <DateRangeSelection id="idDateRangeSelection" 
+                    width="20%"
+                    showCurrentDateButton="true" 
+                    showFooter="true" 
+                    change="onDateRangeSelectionChange"
+                    minDate="{minMaxDateModel>/min}"
+                    maxDate="{minMaxDateModel>/max}"
+                    value= "{
+                        'type': 'sap.ui.model.type.DateInterval',
+                        'parts': [
+                            {
+                                'type': 'sap.ui.model.type.Date',
+                                'path': 'minMaxDateModel>/min'
+                            },
+                            {
+                                'type': 'sap.ui.model.type.Date',
+                                'path': 'minMaxDateModel>/max'
+                            }
+                        ]
+                    }"
+                />
+                
             </Toolbar>
         </headerToolbar>
 
@@ -47,6 +73,11 @@
                     <Text id="idSupplierText" text="{i18n>columnSupplier}"/>
                 </Column>
 
+                <!-- Order Date -->
+                <Column id="idOrderDateColumn" minScreenWidth="Tablet">
+                    <Text id="idOrderDateColumnText" text="{i18n>columnOrderDate}"/>
+                </Column>
+
                 <!-- Column Price -->
                 <Column id="idPriceColumn" hAlign="End">
                     <Text id="idPriceText" text="{i18n>columnPrice}"/>
@@ -80,6 +111,17 @@
 
                         <!-- Cell Supplier -->
                         <Text id="idShipperNameText" text="{northwindModel>ShipperName}"/>
+
+                        <!-- Order Date -->
+                        <Text id="idOrderDateText" 
+                            text="{
+                                path: 'northwindModel>OrderDate',
+                                type: 'sap.ui.model.type.Date',
+                                formatOptions: {
+                                style: 'medium'
+                                }
+                            }"
+                        />
 
                         <!-- Cell Price -->
                         <ObjectNumber id="idPriceObjectNumber"
