@@ -44,7 +44,7 @@ export default class Detail extends Controller {
     onProductRatingChange(event: ProductRating$ChangeEvent): void {
         const value = event.getParameter("value");
         const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel).getResourceBundle() as ResourceBundle;
-        const i18nRatingConfirmation = resourceBundle.getText("ratingConfirmation", [value]) || "tex not found";
+        const i18nRatingConfirmation = resourceBundle.getText("ratingConfirmation", [value]) || "no text defined";
 
         MessageToast.show(i18nRatingConfirmation);
     }

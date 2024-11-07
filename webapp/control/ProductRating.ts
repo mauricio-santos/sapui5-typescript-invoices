@@ -1,3 +1,9 @@
+/*  @ui5/ts-interface-generator
+    https://www.npmjs.com/package/@ui5/ts-interface-generator
+    npm install --save-dev @ui5/ts-interface-generator
+    npx @ui5/ts-interface-generator --watch
+*/
+
 import Control from "sap/ui/core/Control";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
@@ -11,6 +17,11 @@ import Button, { Button$PressEvent } from "sap/m/Button";
  * @namespace santos.sapui5ts.control
  */
 export default class ProductRating extends Control {
+
+    // The following three lines were generated and should remain as-is to make TypeScript aware of the constructor signatures
+    constructor(idOrSettings?: string | $ProductRatingSettings);
+    constructor(id?: string, settings?: $ProductRatingSettings);
+    constructor(id?: string, settings?: $ProductRatingSettings) { super(id, settings); }
 
     public static readonly metadata: MetadataOptions = {
         properties : {
@@ -63,17 +74,6 @@ export default class ProductRating extends Control {
         }).addStyleClass("sapUiTinyMarginTop"));
     }
 
-    public reset(): void {
-        const resourceBundle = (this?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
-        const i18nProductRatingLabelInitial = resourceBundle.getText("productRatingLabelInitial")
-
-        this.setValue(0);
-        (this.getAggregation("_label") as Label).setDesign("Standard");
-        (this.getAggregation("_rating") as RatingIndicator).setEnabled(true);
-        (this.getAggregation("_label") as Label).setText(i18nProductRatingLabelInitial);
-        (this.getAggregation("_button") as Button).setEnabled(true);
-    }
-
     public renderer = {
         apiVersion: 4,
         render: (rm: RenderManager, control: ProductRating) => {
@@ -119,8 +119,14 @@ export default class ProductRating extends Control {
         return this;
     }
 
-    private getValue(): number {
-        return this.getProperty("value");
-    }
+    public reset(): void {
+        const resourceBundle = (this?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+        const i18nProductRatingLabelInitial = resourceBundle.getText("productRatingLabelInitial")
 
+        this.setValue(0);
+        (this.getAggregation("_label") as Label).setDesign("Standard");
+        (this.getAggregation("_rating") as RatingIndicator).setEnabled(true);
+        (this.getAggregation("_label") as Label).setText(i18nProductRatingLabelInitial);
+        (this.getAggregation("_button") as Button).setEnabled(true);
+    }
 };
