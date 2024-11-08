@@ -50,6 +50,10 @@
                     group: true
                 }
             }"
+            growing="true"
+            growingScrollToLoad="true"
+            growingThreshold="30"
+            updateFinished="onInvoicesTableUpdateFinished"
         >
             <columns>
 

@@ -9,6 +9,10 @@ import ObjectListItem from "sap/m/ObjectListItem";
 import Event from "sap/ui/base/Event";
 import Context from "sap/ui/model/Context";
 import DateRangeSelection, { DateRangeSelection$ChangeEvent } from "sap/m/DateRangeSelection";
+import ResourceModel from "sap/ui/model/resource/ResourceModel";
+import ResourceBundle from "sap/base/i18n/ResourceBundle";
+import { ListBase$UpdateFinishedEvent } from "sap/m/ListBase";
+import Title from "sap/m/Title";
 
 /**
  * @namespace santos.sapui5ts.controller
@@ -19,7 +23,16 @@ export default class InvoiceList extends Controller {
             eur : "EUR",
             us : "US"
         });        
-        this.getView()?.setModel(currencyModel, "currencyModel")
+        this.getView()?.setModel(currencyModel, "currencyModel");
+    }
+
+    onInvoicesTableUpdateFinished (event: ListBase$UpdateFinishedEvent) {
+        const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+        const i18nInvoiceListTitle = resourceBundle.getText("invoiceListTitle");
+        const total = event.getParameter("total");
+        const oHeader = this.getView()?.byId("idInvoicesTitle") as Title;
+        
+        oHeader?.setText(`${i18nInvoiceListTitle} (${total})`)
     }
 
     private applyFilters(filters: Array<Filter>){
